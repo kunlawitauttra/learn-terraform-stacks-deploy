@@ -26,12 +26,9 @@ variable "default_tags" {
 }
 
 variable "vpc_cidr_blocks" {
-  description = "Map of regions to their VPC CIDR blocks"
-  type        = map(string)
-  default     = {
-    "us-east-1"     = "10.0.0.0/20"
-    "us-west-1" = "10.1.0.0/20"
-  }
+  description = "List of VPC CIDR blocks matching the order of regions"
+  type        = list(string)
+  default     = ["10.0.0.0/20", "10.1.0.0/20"]
 }
 
 variable "subnet_cidr_blocks" {
@@ -42,5 +39,4 @@ variable "subnet_cidr_blocks" {
     "us-west-1" = ["10.1.1.0/24", "10.1.2.0/24"]
   }
 }
-
 
