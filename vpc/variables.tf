@@ -1,6 +1,6 @@
 variable "regions" {
   description = "List of regions to create VPC and Subnet"
-  type        = list(string)
+  type        =  set(string)
 }
 
 variable "vpc_cidr_blocks" {
