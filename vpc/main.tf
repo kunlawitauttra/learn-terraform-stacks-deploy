@@ -10,7 +10,7 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "subnet_1" {
   for_each   = var.regions
   vpc_id     = aws_vpc.main[each.key].id
-  cidr_block = cidrsubnet(var.vpc_cidr_blocks[each.value], 8, 1)
+  cidr_block = cidrsubnet(var.subnet_cidr_block[each.value], 8, 1)
 
   tags = {
     Name = "subnet-${each.value}-01"
@@ -20,7 +20,7 @@ resource "aws_subnet" "subnet_1" {
 resource "aws_subnet" "subnet_2" {
   for_each   = var.regions
   vpc_id     = aws_vpc.main[each.key].id
-  cidr_block = cidrsubnet(var.vpc_cidr_blocks[each.value], 8, 2)
+  cidr_block = cidrsubnet(var.subnet_cidr_block[each.value], 8, 2)
 
   tags = {
     Name = "subnet-${each.value}-02"
