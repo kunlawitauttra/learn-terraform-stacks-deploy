@@ -19,3 +19,19 @@ variable "default_tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "vpc_cidr_blocks" {
+  description = "Map of regions to their VPC CIDR blocks"
+  type        = map(string)
+  default     = {
+    "us-east-1"     = "10.0.0.0/20"
+    "ap-southeast-1" = "10.1.0.0/20"
+  }
+}
+
+variable "subnet_cidr_block" {
+  description = "CIDR block size for subnets"
+  type        = number
+  default     = 24
+}
+

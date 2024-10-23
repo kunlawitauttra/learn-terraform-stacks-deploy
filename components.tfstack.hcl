@@ -50,3 +50,20 @@ component "api_gateway" {
     random = provider.random.this
   }
 }
+
+component "vpc" {
+  for_each = var.regions
+
+  source = "./vpc"
+
+  inputs = {
+    regions          = var.regions
+    vpc_cidr_blocks  = var.vpc_cidr_blocks
+    subnet_cidr_block = var.subnet_cidr_block
+  }
+
+  providers = {
+    aws    = provider.aws.configurations[each.value]
+    random = provider.random.this
+  }
+}
