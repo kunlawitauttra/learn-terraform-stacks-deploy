@@ -59,7 +59,7 @@ component "vpc" {
   inputs = {
     regions          = var.regions
     vpc_cidr_blocks  = var.vpc_cidr_blocks
-    subnet_cidr_block = var.subnet_cidr_block
+    subnet_cidr_block = var.subnet_cidr_blocks
   }
 
   providers = {

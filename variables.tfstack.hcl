@@ -29,9 +29,13 @@ variable "vpc_cidr_blocks" {
   }
 }
 
-variable "subnet_cidr_block" {
-  description = "CIDR block size for subnets"
-  type        = number
-  default     = 24
+variable "subnet_cidr_blocks" {
+  description = "Map of regions to their list of Subnet CIDR blocks"
+  type        = map(list(string))
+  default     = {
+    "us-east-1" = ["10.0.1.0/24", "10.0.2.0/24"],
+    "ap-southeast-1" = ["10.1.1.0/24", "10.1.2.0/24"]
+  }
 }
+
 

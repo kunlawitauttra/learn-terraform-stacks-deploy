@@ -8,8 +8,7 @@ variable "vpc_cidr_blocks" {
   type        = map(string)
 }
 
-variable "subnet_cidr_block" {
-  description = "CIDR block size for subnets"
-  type        = number
-  default     = 24
+variable "subnet_cidr_blocks" {
+  description = "Map of regions to their list of Subnet CIDR blocks"
+  type        = map(list(string))
 }
