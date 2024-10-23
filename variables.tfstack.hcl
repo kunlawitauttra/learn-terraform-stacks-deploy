@@ -1,8 +1,13 @@
 # Copyright (c) HashiCorp, Inc.
 # SPDX-License-Identifier: MPL-2.0
 
+# variable "regions" {
+#   type = set(string)
+# }
 variable "regions" {
-  type = set(string)
+  description = "List of regions to create VPC and Subnets"
+  type        = list(string)
+  default     = ["us-east-1", "us-west-1"]  # ตัวอย่าง regions
 }
 
 variable "identity_token" {

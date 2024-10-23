@@ -1,6 +1,11 @@
+# variable "regions" {
+#   description = "List of regions to create VPC and Subnet"
+#   type        =  set(string)
+# }
 variable "regions" {
-  description = "List of regions to create VPC and Subnet"
-  type        =  set(string)
+  description = "List of regions to create VPC and Subnets"
+  type        = list(string)
+  default     = ["us-east-1", "us-west-1"]  # ตัวอย่าง regions
 }
 
 variable "vpc_cidr_blocks" {
