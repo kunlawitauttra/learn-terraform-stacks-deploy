@@ -25,7 +25,7 @@ variable "vpc_cidr_blocks" {
   type        = map(string)
   default     = {
     "us-east-1"     = "10.0.0.0/20"
-    "ap-southeast-1" = "10.1.0.0/20"
+    "us-west-1" = "10.1.0.0/20"
   }
 }
 
@@ -34,7 +34,7 @@ variable "subnet_cidr_blocks" {
   type        = map(list(string))
   default     = {
     "us-east-1" = ["10.0.1.0/24", "10.0.2.0/24"],
-    "ap-southeast-1" = ["10.1.1.0/24", "10.1.2.0/24"]
+    "us-west-1" = ["10.1.1.0/24", "10.1.2.0/24"]
   }
 }
 
