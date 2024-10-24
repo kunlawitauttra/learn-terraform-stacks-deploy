@@ -57,13 +57,12 @@ component "vpc" {
   source = "./vpc"
 
   inputs = {
-    regions          = var.regions
-    vpc_cidr_blocks  = var.vpc_cidr_blocks
-    subnet_cidr_blocks = var.subnet_cidr_blocks
+    regions        = var.regions
+    vpc_cidr_blocks = var.vpc_cidr_blocks
   }
 
   providers = {
-    aws    = provider.aws.configurations[each.value]
-    random = provider.random.this
+    aws = provider.aws.configurations[each.value]
   }
 }
+
